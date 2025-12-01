@@ -1,27 +1,19 @@
-N = int(input()) + 1
+N = int(input())
 L = list(map(int, input().split()))
 
-room_key = {}
-for i in range(1, len(L)+1):
-    if L[i-1] == 0:
-        room_key[i] = True
-    else :
-        room_key[i] = False
+cnt = 1
 
-arrive_room = set()
-arrive_room.add(0)
-arrive_room.add(N)
-
-for room_num, key in room_key.items():
-    if key == True:
-        arrive_room.add(room_num)
-    else:
+for l in L:
+    if l == 1:
         break
+    cnt += 1
 
-for room_num, key in reversed(room_key.items()):
-    if key == True:
-        arrive_room.add(room_num)
-    else:
+for l in reversed(L):
+    if l == 1:
         break
+    cnt += 1
 
-print(N - len(arrive_room))
+if cnt >= N:
+    print("0")
+else :
+    print(N - cnt)
