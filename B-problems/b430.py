@@ -10,6 +10,3 @@ cnt = N - M
 output_rows = []
 for i in range(M):
     row_slice = matrix[i][0:M]
-
-for i in range(cnt):
-    
